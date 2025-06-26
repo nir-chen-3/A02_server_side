@@ -7,7 +7,7 @@ This is a Node.js + Express backend server for managing digital business cards. 
 This project is not deployed online. To test locally:
 
 1. Clone and run the project on your machine.
-2. change the `.env` file to use a MongoDB Or Atlas URI.
+2. Copy .env.example to .env, then provide your own local MongoDB URI or Atlas connection string
 
 ---
 
