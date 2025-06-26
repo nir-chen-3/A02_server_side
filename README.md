@@ -69,8 +69,8 @@ To seed:
 ### Installation
 
 ```bash
-git clone <your-repo-url>
-cd <your-project-folder>
+gh repo clone nir-chen-3/A02_server_side
+cd A02_server_side
 npm install
 npm run start
 ```
