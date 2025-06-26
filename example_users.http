@@ -1,0 +1,98 @@
+@baseUrl = http://localhost:3000/users
+@token = token
+
+
+
+
+@userId = userId
+
+### Login (get token)
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+  "email": "admin@example.com",
+  "password": "Abc!123Abc"
+}
+
+###
+
+### Register new user
+POST {{baseUrl}}/
+Content-Type: application/json
+
+{
+  "name": {
+    "first": "Test",
+    "middle": "Tr",
+    "last": "User"
+  },
+  "phone": "0512345678",
+  "email": "admin@example.com",
+  "password": "Abc!123Abc",
+  "image": {
+    "url": "https://cdn.pixabay.com/photo/2016/04/01/10/11/avatar-1299805_960_720.png",
+    "alt": "avatar image"
+  },
+  "address": {
+    "state": "IL",
+    "country": "Israel",
+    "city": "Tel Aviv",
+    "street": "Main St",
+    "houseNumber": 12,
+    "zip": 12345
+  },
+  "isBusiness": false
+}
+
+###
+
+### Get user by ID
+GET {{baseUrl}}/{{userId}}
+x-auth-token: {{token}}
+
+###
+
+### Get all users (admin only)
+GET {{baseUrl}}
+x-auth-token: {{token}}
+
+###
+
+### Update user (PUT)
+PUT {{baseUrl}}/{{userId}}
+x-auth-token: {{token}}
+Content-Type: application/json
+
+{
+  "name": {
+    "first": "UpdatedFirst",
+    "middle": "Ug",
+    "last": "UpdatedLast"
+  },
+  "phone": "0598765432",
+  "image": {
+    "url": "https://cdn.pixabay.com/photo/2016/04/01/10/11/avatar-1299805_960_720.png",
+    "alt": "updated avatar image"
+  },
+  "address": {
+    "state": "IL",
+    "country": "Israel",
+    "city": "Tel Aviv",
+    "street": "Updated St",
+    "houseNumber": 34,
+    "zip": 54321
+  }
+}
+
+###
+
+### Delete user
+DELETE {{baseUrl}}/{{userId}}
+x-auth-token: {{token}}
+
+###
+
+### Patch toggle isBusiness
+PATCH {{baseUrl}}/{{userId}}
+x-auth-token: {{token}}

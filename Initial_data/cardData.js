@@ -1,0 +1,62 @@
+export const cardData = [
+  {
+    title: "Test Cards One",
+    subtitle: "First testing subtitle",
+    description: "First test card creation",
+    phone: "0501234567",
+    email: "test1@example.com",
+    web: "https://example1.com",
+    image: {
+      url: "https://example.com/image1.jpg",
+      alt: "Test Image 1",
+    },
+    address: {
+      state: "IL",
+      country: "Israel",
+      city: "Tel Aviv",
+      street: "Main St",
+      houseNumber: 10,
+      zip: 12345,
+    },
+  },
+  {
+    title: "Test Cards Two",
+    subtitle: "Second testing subtitle",
+    description: "Second test card creation",
+    phone: "0509876543",
+    email: "test2@example.com",
+    web: "https://example2.com",
+    image: {
+      url: "https://example.com/image2.jpg",
+      alt: "Test Image 2",
+    },
+    address: {
+      state: "CA",
+      country: "Israel",
+      city: "Haifa",
+      street: "Second St",
+      houseNumber: 20,
+      zip: 54321,
+    },
+  },
+  {
+    title: "Test Cards Three",
+    subtitle: "Third testing subtitle",
+    description: "Third test card creation",
+    phone: "0505551234",
+    email: "test3@example.com",
+    web: "https://example3.com",
+    image: {
+      url: "https://example.com/image3.jpg",
+      alt: "Test Image 3",
+    },
+    address: {
+      state: "NY",
+      country: "Israel",
+      city: "Jerusalem",
+      street: "Third St",
+      houseNumber: 30,
+      zip: 67890,
+    },
+  },
+];

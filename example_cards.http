@@ -1,0 +1,92 @@
+### Base URL
+@baseUrl = http://localhost:3000/cards
+@token = token
+
+@CARD_ID_HERE=CARD_ID
+
+### 
+### 1. GET all cards (public)
+GET {{baseUrl}}
+
+### 
+### 2. GET logged-in user's cards
+GET {{baseUrl}}/my-cards
+x-auth-token: {{token}}
+
+### 
+### 3. GET a card by ID
+GET {{baseUrl}}/{{CARD_ID_HERE}}
+
+### 
+### 4. POST new card (Business only)
+POST {{baseUrl}}
+Content-Type: application/json
+x-auth-token: {{token}}
+
+{
+  "title": "Test Cards",
+  "subtitle": "Testing subtitle",
+  "description": "Testing card creation",
+  "phone": "0501234567",
+  "email": "manq@example.com",
+  "web": "https://example1.com",
+  "image": {
+    "url": "https://example.com/image.jpg",
+    "alt": "Test Image"
+  },
+  "address": {
+    "state": "IL",
+    "country": "Israel",
+    "city": "Tel Aviv",
+    "street": "Main St",
+    "houseNumber": 10,
+    "zip": 12345
+  }
+}
+
+### 
+### 5. PUT update card by ID
+PUT {{baseUrl}}/{{CARD_ID_HERE}}
+Content-Type: application/json
+x-auth-token: {{token}}
+
+{
+  "title": "Updated Card Title",
+  "subtitle": "Updated subtitle",
+  "description": "Updated description",
+  "phone": "0500000321",
+  "email": "updatedcard@example.com",
+  "web": "https://bing.com",
+  "image": {
+    "url": "https://example.com/updated-image.jpg",
+    "alt": "Updated Image"
+  },
+  "address": {
+    "state": "IL",
+    "country": "Israel",
+    "city": "Haifa",
+    "street": "Second St",
+    "houseNumber": 5,
+    "zip": 54321
+  }
+}
+
+### 
+### 6. DELETE card by ID
+DELETE {{baseUrl}}/{{CARD_ID_HERE}}
+x-auth-token: {{token}}
+
+### 
+### 7. PATCH toggle like/unlike
+PATCH {{baseUrl}}/{{CARD_ID_HERE}}
+x-auth-token: {{token}}
+
+### 
+### 8. PATCH update bizNumber (admin only)
+PATCH {{baseUrl}}/biz-number/{{CARD_ID_HERE}}
+Content-Type: application/json
+x-auth-token: {{token}}
+
+{
+  "bizNumber": 1234567
+}
